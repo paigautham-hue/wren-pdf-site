@@ -1,0 +1,25 @@
+name: Report a written answer
+description: An answer or summary written by the app's optional model was inappropriate or wrong.
+title: "Written answer: "
+labels: ["answer-report"]
+body:
+  - type: markdown
+    attributes:
+      value: "This report is public. Do not include confidential text from your documents."
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: "Paste what 'Copy report' gave you in the app, or describe the question and the answer."
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What was wrong?
+      options:
+        - Inappropriate or offensive
+        - Factually wrong or not supported by the document
+        - Something else
+    validations:
+      required: true
